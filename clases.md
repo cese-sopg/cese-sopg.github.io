@@ -152,7 +152,11 @@ deberá imprimir el mensaje por pantalla.
 
 </details>
 
-## Clase 4: Named FIFOs - Networking | Presentación TP
+## Clase 4: Named FIFOs - Networking
+
+* Comunicación entre procesos: Named FIFOS
+* Introducción a networking
+* Presentación del Trabajo práctico. Entrega antes de clase 6.
 
 ## Clase 5: Sockets
 
