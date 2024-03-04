@@ -1,0 +1,29 @@
+title: SOPG
+description: >-
+  Sitio web del curso Sistemas Operativos de Propósito General - CESE - FIUBA
+domain: cese-sopg.github.io
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://cese-sopg.github.io"
+theme: just-the-docs
+liquid:
+  error_mode: strict
+strict_front_matter: true
+
+aux_links:
+  Editar en Github: https://github.com/cese-sopg/cese-sopg.github.io
+
+search: true
+enable_copy_code_button: true
+
+favicon_ico: "/assets/lse-favicon.png"
+
+callouts:
+  nota:
+    title: Nota
+    color: blue
+  advertencia:
+    title: Advertencia
+    color: yellow
+  cuidado:
+    title: Cuidado
+    color: red
