@@ -9,3 +9,5 @@ Este es el sitio del curso **Sistemas Operativos de Propósito General**,
 de la [Carrera de Especialización de Sistemas
 Embebidos](https://lse.posgrados.fi.uba.ar/posgrados/especializaciones/sistemas-embebidos),
 [LSE](https://lse.posgrados.fi.uba.ar/) - [FIUBA](https://www.fi.uba.ar/).
+
+**Docente:** Diego Essaya
