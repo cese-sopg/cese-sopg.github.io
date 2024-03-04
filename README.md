@@ -1,6 +1,6 @@
 # Sitio web del curso Sistemas Operativos de Propósito General - CESE - FIUBA
 
-[https://algoritmos3ce.github.io/](https://algoritmos3ce.github.io/)
+[https://cese-sopg.github.io/](https://cese-sopg.github.io/)
 
 Basado en [Jekyll](https://jekyllrb.com/) y [Just the
 docs](https://github.com/just-the-docs/just-the-docs).
