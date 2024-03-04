@@ -261,4 +261,8 @@ Discutir qué ventajas y desventajas tiene cada opción de protocolo.
 
 ## Clase 7: Semaphores - Message queues - Shared memory
 
+* POSIX message queues
+* POSIX semaphores
+* POSIX shared memory
+
 ## Clase 8: Examen final
