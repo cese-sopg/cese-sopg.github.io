@@ -1,7 +1,7 @@
 ---
 title: Clase 1
 layout: default
-parent: Clases
+parent: Inicio
 nav_order: 1
 ---
 
@@ -14,4 +14,6 @@ nav_order: 1
 * Comandos básicos de Linux.
 * Sistema de permisos.
 * API de manejo de archivos.
+
+{% include clases_footer.md %}
 

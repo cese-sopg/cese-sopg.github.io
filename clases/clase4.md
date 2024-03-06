@@ -1,7 +1,7 @@
 ---
 title: Clase 4
 layout: default
-parent: Clases
+parent: Inicio
 nav_order: 4
 nav_exclude: true
 ---

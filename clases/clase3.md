@@ -1,7 +1,7 @@
 ---
 title: Clase 3
 layout: default
-parent: Clases
+parent: Inicio
 nav_order: 3
 nav_exclude: true
 ---

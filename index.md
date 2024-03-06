@@ -3,6 +3,8 @@ title: Inicio
 layout: default
 layout: home
 nav_order: 1
+has_children: true
+has_toc: false
 ---
 
 Este es el sitio del curso **Sistemas Operativos de Propósito General**,
