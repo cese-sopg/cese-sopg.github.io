@@ -26,6 +26,12 @@ nav_order: 8
   * [Instalar xubuntu en virtual box](https://www.youtube.com/watch?v=Ron1yALRKG4)
   * [Configurar xubuntu en virtualbox](https://www.youtube.com/watch?v=a5Tg5YGz7Wc)
 
+* Videos:
+  *  The Linux Experiment: [Great resources to learn about Linux](https://www.youtube.com/watch?v=JoaIoctknLk)
+  *  DistroTube: [A Gentle Introduction To Linux](https://www.youtube.com/watch?v=G4C2pMVTxao)
+  *  DistroTube: [Beginner's Guide To The Linux Terminal](https://www.youtube.com/watch?v=s3ii48qYBxA)
+  *  DistroTube: [Learn The Linux Terminal In 30 Minutes](https://www.youtube.com/watch?v=PeCBpI1hT2Q)
+
 ## CESE
 
 * [Encuesta anónima clase a clase](https://docs.google.com/forms/d/e/1FAIpQLSfft_6uKg4g7DuKFp6WpEY4KCkab74CwTH_rxveGGpW1zIy1Q/viewform)
