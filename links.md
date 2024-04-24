@@ -34,5 +34,5 @@ nav_order: 8
 
 ## CESE
 
-* [Encuesta anónima clase a clase](https://docs.google.com/forms/d/e/1FAIpQLSfft_6uKg4g7DuKFp6WpEY4KCkab74CwTH_rxveGGpW1zIy1Q/viewform)
+* [Encuesta anónima clase a clase](https://docs.google.com/forms/d/e/1FAIpQLSfft_6uKg4g7DuKFp6WpEY4KCkab74CwTH_rxveGGpW1zIy1Q/viewform?usp=pp_url&entry.294231852=Sistemas+Operativos+de+Prop%C3%B3sito+General)
 
