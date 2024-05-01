@@ -12,3 +12,5 @@ nav_exclude: true
 * POSIX message queues
 * POSIX semaphores
 * POSIX shared memory
+
+{% include clases_footer.md %}

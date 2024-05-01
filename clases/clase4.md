@@ -12,3 +12,5 @@ nav_exclude: true
 * Comunicación entre procesos: Named FIFOS
 * Introducción a networking
 * Presentación del Trabajo práctico. Entrega antes de clase 6.
+
+{% include clases_footer.md %}

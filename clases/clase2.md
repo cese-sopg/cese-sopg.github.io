@@ -3,7 +3,6 @@ title: Clase 2
 layout: default
 parent: Inicio
 nav_order: 2
-nav_exclude: true
 ---
 
 # Clase 2
@@ -53,3 +52,5 @@ Editar el código del programa anterior e invertir los tiempos utilizados en
 `sleep()` entre las instancias padre e hijo. Compilar y ejecutar. ¿Cómo es el
 comportamiento en este caso del proceso hijo? ¿Termina el proceso normalmente?
 ¿Qué ocurre cuando termina su ejecución el proceso padre?
+
+{% include clases_footer.md %}

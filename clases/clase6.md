@@ -54,3 +54,4 @@ nav_exclude: true
 2. Capturar la signal `SIGINT` (ctrl+c) y finalizar todos los threads y sockets
    abiertos antes de finalizar el proceso.
 
+{% include clases_footer.md %}

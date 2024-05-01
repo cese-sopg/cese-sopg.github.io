@@ -82,3 +82,5 @@ Tomar el ejercicio de la práctica 2 de signals y comunicar el proceso hijo con
 el padre mediante pipes. El proceso hijo deberá enviar un mensaje luego de
 esperar 5 segundos, luego esperará 10 segundos y terminará. El proceso padre
 deberá imprimir el mensaje por pantalla.
+
+{% include clases_footer.md %}

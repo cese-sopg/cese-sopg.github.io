@@ -49,3 +49,5 @@ remota al servidor.
    `read` y `write`.
 
 Discutir qué ventajas y desventajas tiene cada opción de protocolo.
+
+{% include clases_footer.md %}
