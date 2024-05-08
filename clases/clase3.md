@@ -3,7 +3,6 @@ title: Clase 3
 layout: default
 parent: Inicio
 nav_order: 3
-nav_exclude: true
 ---
 
 # Clase 3
@@ -75,6 +74,13 @@ ejecutar la función `wait()`. El proceso hijo deberá ejecutar un `sleep` de 5
 segundos y luego terminar. Asegurarse mediante el comando `ps` que el proceso
 hijo no quede en estado zombie.
 
+Investigar cómo reacciona el proceso padre (con y sin `SA_RESTART`) si recibe
+la señal `SIGCHLD` mientras está ejecutando las funciones:
+
+* `read(STDIN_FILENO, ...)`
+* `sleep(...)`
+* `pause()`
+
 ## Pipes - Práctica 1
 {: .no_toc }
 
@@ -82,5 +88,12 @@ Tomar el ejercicio de la práctica 2 de signals y comunicar el proceso hijo con
 el padre mediante pipes. El proceso hijo deberá enviar un mensaje luego de
 esperar 5 segundos, luego esperará 10 segundos y terminará. El proceso padre
 deberá imprimir el mensaje por pantalla.
+
+Implementar correctamente las llamadas a `read` y `write` de forma tal que los
+procesos reaccionen mostrando un mensaje de error apropiado en los siguientes
+casos:
+
+* `read` en el pipe cuando el hijo termina prematuramente.
+* `write` en el pipe cuando el padre termina prematuramente.
 
 {% include clases_footer.md %}

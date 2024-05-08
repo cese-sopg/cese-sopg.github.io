@@ -22,13 +22,5 @@ int main(void) {
         printf("ingresaste: %s\n", s);
     }
 
-    /*
-    while (1) {
-        printf("inicio\n");
-        unsigned int r = sleep(30);
-        printf("fin. %u\n",r);
-    }
-    */
-
     return 0;
 }
