@@ -1,4 +1,3 @@
-#include <signal.h>
 #include <stdio.h>
 #include <sys/wait.h>
 #include <unistd.h>
@@ -8,14 +7,12 @@ int main(void) {
     pipe(pfds);
 
     if (!fork()) { // hijo
-        // close(1); //cerramos stdout del hijo
         dup2(pfds[1], 1); // reemplaza el stdout del hijo por el
                           // FD para write (y cierra el stdout)
         close(pfds[0]);           // cerramos read
         execlp("ls", "ls", NULL); // reemplaza proceso hijo
                                   // por "ls"
     } else {                      // padre
-        // close(0); // cerramos stdin del padre
         dup2(pfds[0], 0); // reemplaza el stdin del padre
                           // por el FD para read (y cierra el stdin)
         close(pfds[1]);   // cerramos el FD para write
