@@ -3,7 +3,6 @@ title: Clase 4
 layout: default
 parent: Inicio
 nav_order: 4
-nav_exclude: true
 ---
 
 # Clase 4
