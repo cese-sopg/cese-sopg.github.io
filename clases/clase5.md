@@ -3,7 +3,6 @@ title: Clase 5
 layout: default
 parent: Inicio
 nav_order: 5
-nav_exclude: true
 ---
 
 # Clase 5
