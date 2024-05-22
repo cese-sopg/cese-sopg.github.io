@@ -18,7 +18,7 @@ int main(void) {
     serveraddr.sin_port = htons(4096);
     if (inet_pton(AF_INET, "127.0.0.1", &(serveraddr.sin_addr)) <= 0) {
         fprintf(stderr, "ERROR invalid server IP\n");
-        return 1;
+        exit(EXIT_FAILURE);
     }
 
     // Ejecutamos connect()
@@ -33,7 +33,7 @@ int main(void) {
     char buf[128];
     fgets(buf, sizeof(buf), stdin);
     int n = write(s, buf, strlen(buf));
-    printf("Envie %d bytes\n", n);
+    printf("cliente: envie %d bytes\n", n);
     // prueba server desconectado. Al enviar por segunda vez se recibe SIGPIPE
     // n = write(s, buf, strlen(buf));
     //__________________________
@@ -46,11 +46,12 @@ int main(void) {
 
     // Leemos respuesta de server
     n = read(s, buf, sizeof(buf));
-    printf("Recibi %d bytes\n", n);
+    printf("cliente: recibi %d bytes\n", n);
     if (n > 0) {
-        printf("Recibi: '%s'\n", buf);
+        buf[n] = 0x00;
+        printf("cliente: recibi: '%s'\n", buf);
     }
     close(s);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
