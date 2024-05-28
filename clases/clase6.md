@@ -14,7 +14,8 @@ nav_order: 6
 ## Práctica
 {: .no_toc }
 
-1. Tomar el ejemplo `server_tcp.c` y modificarlo para que
+1. Tomar el [ejemplo](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase6/practica)
+   y modificar `server_tcp.c` para que
    pueda aceptar múltiples conexiones. Para ello se lanzará un thread
    cada vez que se acepte una nueva conexión. Cada thread se encargará de
    recibir datos del cliente y enviar como respuesta lo mismo que recibió.
