@@ -8,7 +8,7 @@
 #define STORAGE_SIZE 32
 
 int main(int argc, char *argv[]) {
-    // get shared memory file descriptor (NOT a file)
+    // get shared memory file descriptor (NOT a regular file)
     int fd = shm_open(STORAGE_ID, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
     if (fd == -1) {
         perror("open");
@@ -30,13 +30,13 @@ int main(int argc, char *argv[]) {
     }
 
     // place data into memory
-    char data[STORAGE_SIZE];
-    sprintf(data, "Hello, World! From PID %d", getpid());
-    int len = strlen(data) + 1;
-    memcpy(addr, data, len);
+    char *message = addr;
+    snprintf(message, STORAGE_SIZE, "Hello, World! From PID %d", getpid());
 
     // wait for someone to read it
-    sleep(2);
+    char buf[100];
+    printf("Data stored in shared memory. Press ENTER to unlink and quit.\n");
+    fgets(buf, 100, stdin);
 
     // mmap cleanup
     res = munmap(addr, STORAGE_SIZE);

@@ -17,7 +17,5 @@ int main(void) {
     pthread_create(&thing1, NULL, start_thread, (void *)message1);
     pthread_create(&thing2, NULL, start_thread, (void *)message2);
 
-    pthread_join(thing1, NULL);
-    pthread_join(thing2, NULL);
     return 0;
 }

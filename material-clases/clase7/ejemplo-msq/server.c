@@ -75,6 +75,11 @@ int main(int argc, char **argv) {
             continue;
         }
 
+        if (mq_close(qd_client) == -1) {
+            perror("mq_close");
+            continue;
+        }
+
         printf("Server: response sent to client.\n");
         token_number++;
     }

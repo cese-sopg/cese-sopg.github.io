@@ -23,8 +23,7 @@ int main() {
     }
 
     // Ejecutamos connect()
-    if (connect(s, (const struct sockaddr *)&serveraddr, sizeof(serveraddr)) <
-        0) {
+    if (connect(s, (const struct sockaddr *)&serveraddr, sizeof(serveraddr)) < 0) {
         fprintf(stderr, "ERROR connecting\n");
         close(s);
         exit(EXIT_FAILURE);
