@@ -1,8 +1,7 @@
 ---
 title: Clase 2
 layout: default
-parent: Inicio
-nav_order: 2
+nav_order: 3
 ---
 
 # Clase 2
@@ -14,6 +13,13 @@ nav_order: 2
 * Scheduler de Linux
 * Gestión de procesos: Estados, visualización.
 * Creación de procesos: `fork()`
+
+{: .nota-title }
+> Material
+>
+> * [Presentación](https://docs.google.com/presentation/d/1k4_qzy1bh7mKbOa2QoFThZ_oRMASUCi9I5pEYrxVzu8/edit?usp=drive_link)
+>
+> * [Material adicional y ejemplos de código](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase2)
 
 ## Prácticas
 {: .no_toc .text-delta }
@@ -52,5 +58,3 @@ Editar el código del programa anterior e invertir los tiempos utilizados en
 `sleep()` entre las instancias padre e hijo. Compilar y ejecutar. ¿Cómo es el
 comportamiento en este caso del proceso hijo? ¿Termina el proceso normalmente?
 ¿Qué ocurre cuando termina su ejecución el proceso padre?
-
-{% include clases_footer.md %}

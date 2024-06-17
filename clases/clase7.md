@@ -1,8 +1,7 @@
 ---
 title: Clase 7
 layout: default
-parent: Inicio
-nav_order: 7
+nav_order: 8
 ---
 
 # Clase 7
@@ -12,4 +11,9 @@ nav_order: 7
 * POSIX semaphores
 * POSIX shared memory
 
-{% include clases_footer.md %}
+{: .nota-title }
+> Material
+>
+> * [Presentación](https://docs.google.com/presentation/d/1rd-NpcEUBVdj_cLzd8fHogAV4GBr8CIXp6vzqeRi8NE/edit?usp=drive_link)
+>
+> * [Material adicional y ejemplos de código](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase7)

@@ -1,8 +1,7 @@
 ---
 title: Clase 1
 layout: default
-parent: Inicio
-nav_order: 1
+nav_order: 2
 ---
 
 # Clase 1
@@ -15,5 +14,7 @@ nav_order: 1
 * Sistema de permisos.
 * API de manejo de archivos.
 
-{% include clases_footer.md %}
-
+{: .nota-title }
+> Material
+>
+> * [Presentación](https://docs.google.com/presentation/d/1X9mGN_c7PF5vkQKUb5nhHEvSXe1Tsg_JFjBdcDmGyF4/edit?usp=drive_link)

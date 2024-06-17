@@ -1,8 +1,7 @@
 ---
 title: Clase 6
 layout: default
-parent: Inicio
-nav_order: 6
+nav_order: 7
 ---
 
 # Clase 6
@@ -10,6 +9,13 @@ nav_order: 6
 
 * Threads.
 * Sincronización: mutexes.
+
+{: .nota-title }
+> Material
+>
+> * [Presentación](https://docs.google.com/presentation/d/1zK8A3vaE5x-q-_17fUuqt3788Kfsgz1IQk-D54c0M80/edit?usp=drive_link)
+>
+> * [Material adicional y ejemplos de código](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase6)
 
 ## Práctica
 {: .no_toc }
@@ -53,5 +59,3 @@ nav_order: 6
 
 2. Capturar la signal `SIGINT` (ctrl+c) y finalizar todos los threads y sockets
    abiertos antes de finalizar el proceso.
-
-{% include clases_footer.md %}

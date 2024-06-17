@@ -1,8 +1,7 @@
 ---
 title: Clase 3
 layout: default
-parent: Inicio
-nav_order: 3
+nav_order: 4
 ---
 
 # Clase 3
@@ -10,6 +9,13 @@ nav_order: 3
 
 * Comunicación entre procesos: Signals
 * Comunicación entre procesos: Pipes
+
+{: .nota-title }
+> Material
+>
+> * [Presentación](https://docs.google.com/presentation/d/13HXhRGgIfv4r_xldMbmNpNrVGebx7PCnlXhL4BLv86g/edit?usp=drive_link)
+>
+> * [Material adicional y ejemplos de código](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase3)
 
 ## Prácticas
 {: .no_toc .text-delta }
@@ -95,5 +101,3 @@ casos:
 
 * `read` en el pipe cuando el hijo termina prematuramente.
 * `write` en el pipe cuando el padre termina prematuramente.
-
-{% include clases_footer.md %}

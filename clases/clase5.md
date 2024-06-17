@@ -1,14 +1,20 @@
 ---
 title: Clase 5
 layout: default
-parent: Inicio
-nav_order: 5
+nav_order: 6
 ---
 
 # Clase 5
 {: .no_toc }
 
 * Comunicación entre procesos: Sockets
+
+{: .nota-title }
+> Material
+>
+> * [Presentación](https://docs.google.com/presentation/d/1H13iBDSK98wg2ABpzAVLls2FFSeEqbFbg_B1RYF7ne8/edit?usp=drive_link)
+>
+> * [Material adicional y ejemplos de código](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase5)
 
 ## Práctica: Creación de un cliente-servidor TCP
 {: .no_toc }
@@ -48,5 +54,3 @@ remota al servidor.
    `read` y `write`.
 
 Discutir qué ventajas y desventajas tiene cada opción de protocolo.
-
-{% include clases_footer.md %}
