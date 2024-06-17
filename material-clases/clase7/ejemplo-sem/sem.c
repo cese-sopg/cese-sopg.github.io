@@ -22,10 +22,6 @@ static void handler(int sig) {
 }
 
 int main(int argc, char *argv[]) {
-    struct sigaction sa;
-    struct timespec ts;
-    int s;
-
     if (argc != 3) {
         fprintf(stderr, "Usage: %s <alarm-secs> <wait-secs>\n",
                 argv[0]);
@@ -37,6 +33,7 @@ int main(int argc, char *argv[]) {
 
     /* Establish SIGALRM handler; set alarm timer using argv[1]. */
 
+    struct sigaction sa;
     sa.sa_handler = handler;
     sigemptyset(&sa.sa_mask);
     sa.sa_flags = 0;
@@ -48,11 +45,13 @@ int main(int argc, char *argv[]) {
     /* Calculate relative interval as current time plus
        number of seconds given argv[2]. */
 
+    struct timespec ts;
     if (clock_gettime(CLOCK_REALTIME, &ts) == -1)
         handle_error("clock_gettime");
 
     ts.tv_sec += atoi(argv[2]);
 
+    int s;
     printf("%s() about to call sem_timedwait()\n", __func__);
     while ((s = sem_timedwait(&sem, &ts)) == -1 && errno == EINTR)
         continue;       /* Restart if interrupted by handler. */
