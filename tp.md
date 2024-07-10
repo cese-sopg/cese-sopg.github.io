@@ -7,7 +7,20 @@ nav_exclude: true
 
 # Trabajo práctico
 
-**Tiempo de entrega:** hasta clase 6.
+**Tiempo de entrega:** hasta clase 6
+
+**Fecha límite de aprobación:** hasta clase 8
+
+Una vez recibida la corrección se permiten hasta 2 reentregas, siempre que sea antes
+de la fecha límite de aprobación.
+
+## Nota
+
+La nota del TP se determina en base a la correctitud, prolijiidad y elegancia
+del código.
+
+La nota final de la materia es un promedio entre la nota del TP y la nota del
+examen final.
 
 ## Objetivo
 
@@ -32,7 +45,12 @@ DATA:XXXXXXXXX
 
 En cualquier momento el proceso podrá recibir las signals `SIGUSR1` y
 `SIGUSR2`. En dicho caso deberá escribir en el named FIFO el mensaje `SIGN:1` o
-`SIGN:2` y contnuar con su ejecución normal.
+`SIGN:2` y contnuar con su ejecución normal. Las signals se pueden recibir
+más de una vez.
+
+En cualquier momento, además, el proceso writer puede detectar el EOF en la
+entrada estándar (indicada presionando `CTRL+D` en la consola). En este caso el
+writer debe finalizar la ejecución.
 
 ### Proceso Reader
 
@@ -42,4 +60,12 @@ Este proceso leerá los datos del named FIFO y según el encabezado `DATA` o
 ## Manejo de errores
 
 Ante cualquier caso excepcional, ambos programas deben mostrar un mensaje de
-error y finalizar con un código de error.
+error apropiado y finalizar con un código de error.
+
+Casos a tener en cuenta como mínimo:
+
+* Error al crear y/o abrir el named FIFO.
+* Writer escribe en el pipe pero el reader está muerto.
+* Reader lee del pipe pero el writer está muerto.
+* Cualquier otro error al escribir o leer el FIFO.
+
