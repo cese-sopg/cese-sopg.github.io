@@ -54,7 +54,7 @@ int main() {
                 break;
             }
             buf[n] = '\0';
-            printf("received %d bytes: %s\n", n, buf);
+            printf("received %d bytes from client: %s\n", n, buf);
 
             // echo to client
             if (send(conn, buf, strlen(buf), 0) == -1) {
