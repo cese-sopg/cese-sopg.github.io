@@ -5,39 +5,8 @@
 #include <strings.h>
 #include <sys/socket.h>
 #include <unistd.h>
-#include "clientdata.h"
-
-void *procesar_cliente(void* arg) {
-    clientdata *data = (clientdata *)arg;
-
-    // Leemos mensaje de cliente
-    char buffer[128];
-    int n;
-    if ((n = read(data->fd, buffer, 128)) == -1) {
-        perror("Error leyendo mensaje en socket");
-        exit(1);
-    }
-    buffer[n] = 0;
-    printf("Recibi %d bytes.:%s\n", n, buffer);
-
-    // Enviamos mensaje a cliente
-    if (write(data->fd, "hola", 5) == -1) {
-        perror("Error escribiendo mensaje en socket");
-        exit(1);
-    }
-
-    // Cerramos conexion con cliente
-    close(data->fd);
-
-    data->free = true;
-    return NULL;
-}
-
-clientdata pool[100];
 
 int main() {
-    cd_init(pool, 100);
-
     // Creamos socket
     int s = socket(PF_INET, SOCK_STREAM, 0);
 
@@ -78,17 +47,24 @@ int main() {
         printf("server:  conexion desde:  %s\n",
                inet_ntoa(clientaddr.sin_addr));
 
-        int cd_index = cd_getFreeIndex(pool, 100);
-        if (cd_index == -1) {
-            printf("descartando conexion\n");
-            close(newfd);
-        } else {
-            clientdata *cd = &pool[cd_index];
-            cd->free = false;
-            cd->fd = newfd;
-            pthread_create(&cd->thread, NULL, procesar_cliente, cd);
-            pthread_detach(cd->thread);
+        // Leemos mensaje de cliente
+        char buffer[128];
+        int n;
+        if ((n = read(newfd, buffer, 128)) == -1) {
+            perror("Error leyendo mensaje en socket");
+            exit(1);
         }
+        buffer[n] = 0;
+        printf("Recibi %d bytes.:%s\n", n, buffer);
+
+        // Enviamos mensaje a cliente
+        if (write(newfd, "hola", 5) == -1) {
+            perror("Error escribiendo mensaje en socket");
+            exit(1);
+        }
+
+        // Cerramos conexion con cliente
+        close(newfd);
     }
 
     return 0;
