@@ -20,12 +20,8 @@ nav_order: 2
 > * [Presentación](https://docs.google.com/presentation/d/1X9mGN_c7PF5vkQKUb5nhHEvSXe1Tsg_JFjBdcDmGyF4/edit?usp=drive_link)
 
 ## Prácticas
-{: .no_toc .text-delta }
 
-* Prácticas
-{:toc}
-
-## Práctica 1
+### Práctica 1
 
 Escribir un programa que al invocarlo como `./tam archivo` imprime el tamaño en
 bytes del `archivo`.
@@ -39,7 +35,7 @@ bytes del `archivo`.
 En caso de error, el programa debe informar la causa y finalizar con
 código de error.
 
-## Práctica 2
+### Práctica 2
 
 Escribir un programa que al invocarlo como `./es-ascii archivo` informa si el
 `archivo` contiene texto ASCII o no (es decir, si todos los caracteres son bytes
@@ -48,7 +44,7 @@ entre 0 y 127).
 En caso de error, el programa debe informar la causa y finalizar con
 código de error.
 
-## Práctica 3
+### Práctica 3
 
 Escribir un programa que al invocarlo como `./rot13 archivo` encripta el
 `archivo` mediante el algoritmo de cifrado

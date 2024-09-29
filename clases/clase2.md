@@ -5,12 +5,11 @@ nav_order: 3
 ---
 
 # Clase 2
-{: .no_toc }
 
 * Tipos de kernel. Kernel de Linux. Arquitectura.
-* Proceso de arranque.
-* Procesos y threads.
-* Scheduler de Linux
+* Mecanismo de arranque del kernel.
+* Procesos.
+* Scheduler.
 * Gestión de procesos: Estados, visualización.
 * Creación de procesos: `fork()`
 
@@ -22,14 +21,10 @@ nav_order: 3
 > * [Material adicional y ejemplos de código](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase2)
 
 ## Prácticas
-{: .no_toc .text-delta }
 
-* Prácticas
-{:toc}
+### Práctica 1
 
-## Práctica 1
-
-Escribir un programa que cree una instancia hija con el syscall `fork()`. Luego
+Escribir un programa que cree una instancia hija con la función `fork()`. Luego
 de `fork()`, la instancia padre ejecuta un sleep de 20 segundos y luego termina.
 La instancia hija ejecuta un sleep de 40 segundos y luego termina.
 
@@ -52,9 +47,36 @@ Puede utilizarse el comando `watch` para ejecutar periódicamente el comando
 Usar el nombre del proceso `“proceso”` y no `“./proceso”`, ya que al ser zombie
 el comando `ps` lo muestra sin el `“./”`.
 
-## Práctica 2
+### Práctica 2
 
 Editar el código del programa anterior e invertir los tiempos utilizados en
 `sleep()` entre las instancias padre e hijo. Compilar y ejecutar. ¿Cómo es el
 comportamiento en este caso del proceso hijo? ¿Termina el proceso normalmente?
 ¿Qué ocurre cuando termina su ejecución el proceso padre?
+
+### Práctica 3
+
+Implementar un _shell_ primitivo. El algoritmo principal en pseudocódigo debe
+ser algo como:
+
+```
+while true {
+    Mostrar el prompt ("$ ")
+    Leer una línea de la entrada estándar
+    En caso de EOF:
+        fin
+    Dividir la línea en tokens [1] y verificar que haya al menos un token (el
+    nombre del comando a ejecutar)
+    fork()
+    En el padre:
+      esperar a que el hijo finalice
+    En el hijo:
+      usar alguna de las funciones exec() para ejecutar el subcomando
+}
+```
+
+Verificar el estado de error de todas las funciones de biblioteca invocadas.
+¿Qué debería hacer el programa ante un error?
+
+Nota: para `[1]` puede ser útil la función
+[`strtok()`](https://man7.org/linux/man-pages/man3/strtok.3.html)
