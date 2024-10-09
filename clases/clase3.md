@@ -5,7 +5,6 @@ nav_order: 4
 ---
 
 # Clase 3
-{: .no_toc }
 
 * Comunicación entre procesos: Signals
 * Comunicación entre procesos: Pipes
@@ -18,13 +17,8 @@ nav_order: 4
 > * [Material adicional y ejemplos de código](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase3)
 
 ## Prácticas
-{: .no_toc .text-delta }
 
-* Prácticas
-{:toc}
-
-## Signals - Práctica 1
-{: .no_toc }
+### Signals - Práctica 1
 
 1. Crear el archivo `loop.py`. Escribir en su interior:
 
@@ -71,8 +65,7 @@ nav_order: 4
 
 7. Se deberá ver el `"tick"` nuevamente.
 
-## Signals - Práctica 2
-{: .no_toc }
+### Signals - Práctica 2
 
 Escribir un programa que cree una instancia hija con `fork()`. El
 proceso padre deberá registrar el handler para `SIGCHLD`, y dentro del mismo
@@ -88,7 +81,6 @@ la señal `SIGCHLD` mientras está ejecutando las funciones:
 * `pause()`
 
 ## Pipes - Práctica 1
-{: .no_toc }
 
 Tomar el ejercicio de la práctica 2 de signals y comunicar el proceso hijo con
 el padre mediante pipes. El proceso hijo deberá enviar un mensaje luego de

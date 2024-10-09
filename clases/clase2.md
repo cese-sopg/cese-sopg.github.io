@@ -56,8 +56,10 @@ comportamiento en este caso del proceso hijo? ¿Termina el proceso normalmente?
 
 ### Práctica 3
 
-Implementar un _shell_ primitivo. El algoritmo principal en pseudocódigo debe
-ser algo como:
+Implementar un _shell_ primitivo, que permita ejecutar comandos simples
+mediante la sintaxis `<comando> <argumento> <argumento> ...`.
+
+El ciclo principal debe ser algo como:
 
 ```
 while true {
