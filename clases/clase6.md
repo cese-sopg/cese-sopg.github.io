@@ -5,7 +5,6 @@ nav_order: 7
 ---
 
 # Clase 6
-{: .no_toc }
 
 * Threads.
 * Sincronización: mutexes.
@@ -17,8 +16,9 @@ nav_order: 7
 >
 > * [Material adicional y ejemplos de código](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase6)
 
-## Práctica
-{: .no_toc }
+## Prácticas
+
+### Práctica 1: Servidor multihilo
 
 1. Tomar el [ejemplo](https://github.com/cese-sopg/cese-sopg.github.io/tree/main/material-clases/clase6/practica)
    y modificar `server_tcp.c` para que
@@ -59,3 +59,13 @@ nav_order: 7
 
 2. Capturar la signal `SIGINT` (ctrl+c) y finalizar todos los threads y sockets
    abiertos antes de finalizar el proceso.
+
+### Práctica 2: chat v3
+
+Modificar la aplicación de chat desarrollada en las prácticas de las clases
+anteriores para aceptar una cantidad dinámica de clientes simultáneos, lanzando
+un thread por conexión.
+
+Los clientes pueden conectarse y desconectarse en cualquier momento.
+Cualquier mensaje recibido de un cliente debe ser reenviado a todos los otros
+clientes conectados.
