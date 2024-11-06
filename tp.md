@@ -2,25 +2,9 @@
 title: Trabajo práctico
 layout: default
 nav_order: 9
-nav_exclude: true
 ---
 
 # Trabajo práctico
-
-**Tiempo de entrega:** hasta clase 6
-
-**Fecha límite de aprobación:** hasta clase 8
-
-Una vez recibida la corrección se permiten hasta 2 reentregas, siempre que sea antes
-de la fecha límite de aprobación.
-
-## Nota
-
-La nota del TP se determina en base a la correctitud, prolijiidad y elegancia
-del código.
-
-La nota final de la materia es un promedio entre la nota del TP y la nota del
-examen final.
 
 ## Objetivo
 
@@ -95,3 +79,25 @@ GET perro
 NOTFOUND
 $
 ```
+
+----
+
+## Entrega
+
+Entregar por mail, adjuntando el código fuente o (preferentemente) un link a un
+repositorio de Github.
+
+* **Fecha límite para la primera entrega:** hasta clase 6
+* **Fecha límite de aprobación:** hasta clase 8
+
+Una vez recibida la corrección se permiten hasta 2 reentregas, siempre que sea antes
+de la fecha límite de aprobación.
+
+## Nota
+
+La nota del TP se determina en base a la correctitud, prolijiidad y elegancia
+del código.
+
+La nota final de la materia es un promedio entre la nota del TP y la nota del
+examen final.
+
