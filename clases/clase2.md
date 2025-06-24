@@ -9,6 +9,7 @@ nav_order: 3
 * Tipos de kernel. Kernel de Linux. Arquitectura.
 * Mecanismo de arranque del kernel.
 * Procesos.
+* API de manejo de archivos.
 * Scheduler.
 * Gestión de procesos: Estados, visualización.
 * Creación de procesos: `fork()`

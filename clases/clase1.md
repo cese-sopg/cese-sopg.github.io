@@ -12,7 +12,6 @@ nav_order: 2
 * Archivos. Inodos. Jerarquía de archivos estándar.
 * Comandos básicos de Linux.
 * Sistema de permisos.
-* API de manejo de archivos.
 
 {: .nota-title }
 > Material
