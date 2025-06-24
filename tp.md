@@ -2,6 +2,7 @@
 title: Trabajo práctico
 layout: default
 nav_order: 9
+nav_exclude: true
 ---
 
 # Trabajo práctico
@@ -100,4 +101,3 @@ del código.
 
 La nota final de la materia es un promedio entre la nota del TP y la nota del
 examen final.
-
