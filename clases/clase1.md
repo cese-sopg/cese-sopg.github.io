@@ -23,7 +23,33 @@ nav_order: 2
 
 ### Práctica 1
 
-Escribir un programa que al invocarlo como `./tam archivo` imprime el tamaño en
+Crear una carpeta llamada `prueba_ln` y dentro de ella un archivo de texto
+llamado `datos.txt` con contenido simple. Luego, crear un enlace duro a
+`datos.txt` llamado `copia_dura.txt` y un enlace simbólico llamado
+`copia_simbolica.txt`. Verificar que los tres archivos existen y sus respectivos
+números de inodo. Probar qué ocurre al modificar el contenido de uno de ellos.
+
+Finalmente, eliminar el archivo original `datos.txt` y verificar qué enlaces
+siguen funcionando. Explicar por qué el comportamiento de cada uno fue
+diferente.
+
+### Práctica 2
+
+Crear un archivo llamado `notas.txt` que contenga algún texto.
+Luego, realizar las siguientes tareas, determinando comando apropiado a ejecutar
+para cada una, y verificando qué ocurre al intentar leer y/o escribir el
+contenido del archivo:
+
+  * Eliminar todos los permisos del archivo `notas.txt` para todos los usuarios.
+  * Dar permisos de lectura solamente al propietario del archivo.
+  * Cambiar los permisos para que todos los usuarios puedan leer y escribir el
+    archivo.
+  * Finalmente, establecer los permisos para que solo el propietario pueda leer
+    y escribir, y el grupo y otros usuarios no tengan ningún permiso.
+
+### Práctica 3
+
+Escribir un programa en C que al invocarlo como `./tam archivo` imprime el tamaño en
 bytes del `archivo`.
 
 1. Usando las funciones
@@ -34,26 +60,3 @@ bytes del `archivo`.
 
 En caso de error, el programa debe informar la causa y finalizar con
 código de error.
-
-### Práctica 2
-
-Escribir un programa que al invocarlo como `./es-ascii archivo` informa si el
-`archivo` contiene texto ASCII o no (es decir, si todos los caracteres son bytes
-entre 0 y 127).
-
-En caso de error, el programa debe informar la causa y finalizar con
-código de error.
-
-### Práctica 3
-
-Escribir un programa que al invocarlo como `./rot13 archivo` encripta el
-`archivo` mediante el algoritmo de cifrado
-[ROT13](https://en.wikipedia.org/wiki/ROT13).
-
-Asumir que el contenido del archivo puede ser más grande que la memoria
-disponible. La conversión debe hacerse sobre el mismo archivo abierto en modo
-`O_RDWR`, y usando la función `lseek`.
-
-En caso de error, el programa debe informar la causa y finalizar con
-código de error.
-

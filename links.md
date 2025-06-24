@@ -28,6 +28,7 @@ nav_order: 11
 
 * Videos:
   *  The Linux Experiment: [Great resources to learn about Linux](https://www.youtube.com/watch?v=JoaIoctknLk)
+  *  The Linux Experiment: [Learn the Linux command line: 40 commands in 15 minutes](https://www.youtube.com/watch?v=QhvDvpyvPSE)
   *  DistroTube: [A Gentle Introduction To Linux](https://www.youtube.com/watch?v=G4C2pMVTxao)
   *  DistroTube: [Beginner's Guide To The Linux Terminal](https://www.youtube.com/watch?v=s3ii48qYBxA)
   *  DistroTube: [Learn The Linux Terminal In 30 Minutes](https://www.youtube.com/watch?v=PeCBpI1hT2Q)
@@ -35,4 +36,3 @@ nav_order: 11
 ## CESE
 
 * [Encuesta anónima clase a clase](https://docs.google.com/forms/d/e/1FAIpQLSfft_6uKg4g7DuKFp6WpEY4KCkab74CwTH_rxveGGpW1zIy1Q/viewform?usp=pp_url&entry.294231852=Sistemas+Operativos+de+Prop%C3%B3sito+General)
-
