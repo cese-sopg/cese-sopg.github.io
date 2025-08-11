@@ -16,20 +16,20 @@ void incrementar_contador(int pid) {
     }
 
     for (int i = 0; i < NUM_INCREMENTS; ++i) {
+        // Leer el contador
         char buffer[32];
-        lseek(fd, 0, SEEK_SET); // Ir al inicio del archivo
-        read(fd, buffer, sizeof(buffer)); // Leer el contador
+        pread(fd, buffer, sizeof(buffer), 0); // (pread = lseek + read)
         int counter = atoi(buffer);
 
-        counter++; // Incrementar el contador
+        // Incrementar el contador
+        counter++;
 
         usleep(10000);
 
         // Escribir el contador
         snprintf(buffer, sizeof(buffer), "%d", counter);
-        lseek(fd, 0, SEEK_SET); // Ir al inicio
-        write(fd, buffer, strlen(buffer)); // Escribir
-        ftruncate(fd, strlen(buffer)); // Truncar el archivo
+        pwrite(fd, buffer, strlen(buffer), 0);
+        ftruncate(fd, strlen(buffer));
 
         printf("PID %d: El nuevo valor del contador es %d\n", pid, counter);
 
