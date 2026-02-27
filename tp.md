@@ -2,7 +2,7 @@
 title: Trabajo práctico
 layout: default
 nav_order: 9
-nav_exclude: false
+nav_exclude: true
 ---
 
 # Trabajo práctico
