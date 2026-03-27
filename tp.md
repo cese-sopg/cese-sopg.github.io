@@ -2,7 +2,7 @@
 title: Trabajo práctico
 layout: default
 nav_order: 9
-nav_exclude: true
+nav_exclude: false
 ---
 
 # Trabajo práctico
@@ -38,8 +38,32 @@ Los comandos que acepta el servidor son:
   * Si existe la el archivo correspondiente, se elimina.
   * Tanto si existe como no, se responde `OK\n`.
 
-Ante cualquier caso excepcional, informar la causa y finalizar el proceso con
-código de error.
+### SIGUSR1
+
+El servidor debe además escuchar la señal `SIGUSR1`, y al recibirla, si hay un
+cliente conectado, debe desconectarlo inmediatamente sin responderle nada. Si no
+hay ningún cliente conectado, el servidor debe ignorar la señal.
+
+### Mensajes en `stdout`
+
+Al iniciar, el servidor debe imprimir su PID en `stdout` para que pueda ser
+utilizado posteriormente para enviarle señales.
+
+Cuando se conecta un cliente, el servidor debe imprimir en `stdout` el mensaje
+`cliente conectado: <IP del cliente>`, y cuando se desconecta, debe imprimir
+`cliente desconectado: <IP del cliente>`.
+
+### Manejo de errores
+
+Ante cualquier caso excepcional, se debe informar la causa imprimiendo un
+mensaje en `stderr`. Además, si se trata de un problema irrecuperable,
+el proceso debe finalizar con código de error. Al menos se deben manejar los
+siguientes casos:
+
+* Alguna de las llamadas de sistema devuelve un error.
+* El cliente se desconecta inesperadamente.
+* El cliente envía un comando desconocido o con formato incorrecto (por
+  ejemplo, `SET` sin argumentos o con solo un argumento).
 
 ## Cliente
 
