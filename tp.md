@@ -41,8 +41,9 @@ Los comandos que acepta el servidor son:
 ### SIGUSR1
 
 El servidor debe además escuchar la señal `SIGUSR1`, y al recibirla, si hay un
-cliente conectado, debe desconectarlo inmediatamente sin responderle nada. Si no
-hay ningún cliente conectado, el servidor debe ignorar la señal.
+cliente conectado, debe desconectarlo inmediatamente y pasar a esperar a que se
+conecte otro cliente. Si no hay ningún cliente conectado, el servidor debe
+ignorar la señal.
 
 ### Mensajes en `stdout`
 
