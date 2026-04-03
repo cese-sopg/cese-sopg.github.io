@@ -59,19 +59,15 @@ int main(int argc, char **argv)
     }
 
     int port = atoi(argv[1]);
-
     int listen_fd = create_listener(port);
 
     printf("waiting for 2 clients on port %d...\n", port);
-
     int client[2];
     client[0] = accept_one(listen_fd);
     client[1] = accept_one(listen_fd);
-
     printf("2 clients connected, relaying messages...\n");
 
     char buf[BUF_SIZE];
-
     while (1) {
         fd_set readfds;
         FD_ZERO(&readfds);
@@ -80,9 +76,7 @@ int main(int argc, char **argv)
         FD_SET(client[1], &readfds);
 
         int maxfd = client[0] > client[1] ? client[0] : client[1];
-
         int ready = select(maxfd + 1, &readfds, NULL, NULL, NULL);
-
         if (ready < 0) {
             if (errno == EINTR)
                 continue;
