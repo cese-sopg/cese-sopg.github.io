@@ -1,16 +1,17 @@
 ---
-title: Trabajo práctico
+title: Trabajo práctico 2
 layout: default
-nav_order: 9
+nav_order: 10
 nav_exclude: true
 ---
 
-# Trabajo práctico
+# Trabajo práctico 2
 
 ## Objetivo
 
-Escribir un servidor TCP que permite almacenar información ASCII en forma de
-_clave-valor_.
+Tomar el código del [Trabajo práctico 1](tp1.md) y adaptarlo para que, en lugar
+de recibir los comandos desde `stdin`, funcione como un servidor TCP que recibe
+los comandos a través de la red.
 
 El servidor debe:
 
@@ -19,24 +20,18 @@ El servidor debe:
 2. Esperar a que el cliente envíe un _comando_ a ejecutar. El comando se
    especifica como una secuencia de caracteres ASCII hasta el `\n`.
 
-3. Realizar la operación correspondiente.
+3. Realizar la operación correspondiente, enviando la respuesta al cliente.
 
-4. Cortar la conexión con el cliente y volver al paso 1.
+4. Volver al paso 2 para atender el siguiente comando del mismo cliente.
 
-Los comandos que acepta el servidor son:
+5. Cuando el cliente cierra la conexión, volver al paso 1 para esperar a que se
+   conecte un nuevo cliente.
 
-* `SET <clave> <valor>\n`:
-  * Se crea en el servidor un archivo llamado `<clave>` con el contenido
-    indicado en `<valor>` (sin incluir el `\n`).
-  * Se responde al cliente `OK\n`.
-* `GET <clave>`:
-  * Si existe el archivo correspondiente, se responde al cliente con:
-    `OK\n<valor>\n` (es decir, una línea de texto que dice `OK` y otra que
-    contiene el contenido del archivo).
-  * Si no existe, se responde con `NOTFOUND\n`
-* `DEL <clave>`:
-  * Si existe la el archivo correspondiente, se elimina.
-  * Tanto si existe como no, se responde `OK\n`.
+Es decir, mientras la conexión permanezca abierta, el servidor atiende todos los
+comandos que envíe el cliente (de la misma manera en que el TP1 atiende los
+comandos recibidos por `stdin`).
+
+Los comandos que acepta el servidor son los mismos que en el TP1.
 
 ### SIGUSR1
 
@@ -62,7 +57,6 @@ el proceso debe finalizar con código de error. Al menos se deben manejar los
 siguientes casos:
 
 * Alguna de las llamadas de sistema devuelve un error.
-* El cliente se desconecta inesperadamente.
 * El cliente envía un comando desconocido o con formato incorrecto (por
   ejemplo, `SET` sin argumentos o con solo un argumento).
 
@@ -75,7 +69,12 @@ En ubuntu se pueden instalar con: `apt install netcat` o `apt install telnet`.
 
 ## Ejemplo
 
-* En la consola #1 (server): `./server`
+* En la consola #1 (server):
+
+```
+$ ./server
+PID: 12345
+```
 
 * En la consola #2 (client): `nc localhost 5000`. Si la conexión es exitosa, el proceso
   se queda esperando a recibir entrada de `stdin`.
@@ -84,45 +83,46 @@ En ubuntu se pueden instalar con: `apt install netcat` o `apt install telnet`.
 $ nc localhost 5000
 SET manzana apple
 OK
-$ nc localhost 5000
 SET perro dog
 OK
-$ nc localhost 5000
 SET hola hello
 OK
-$ nc localhost 5000
 GET perro
 OK
 dog
-$ nc localhost 5000
 GET casa
 NOTFOUND
-$ nc localhost 5000
 DEL perro
 OK
-$ nc localhost 5000
 GET perro
 NOTFOUND
 $
 ```
 
+* Mientras no se cierre la conexión, el servidor sigue atendiendo comandos sobre
+  la misma sesión. La conexión se cierra desde el cliente (por ejemplo, con
+  `Ctrl+C` o `Ctrl+D` en `nc`).
+
 ----
 
 ## Entrega
 
-Entregar por mail, adjuntando el código fuente o (preferentemente) un link a un
-repositorio de Github.
+**Fecha límite para la entrega 1:** clase 7
 
-* **Fecha límite para la primera entrega:** hasta clase 6
-* **Fecha límite de aprobación:** hasta clase 8
+**Fecha límite para la entrega 2:** una semana luego de la clase 8 (opcional en
+caso de haber aprobado la entrega 1, se puede realizar para mejorar la nota del
+TP)
 
-Una vez recibida la corrección se permiten hasta 2 reentregas, siempre que sea antes
-de la fecha límite de aprobación.
+* Realizar los cambios sobre el mismo repositorio del TP1.
+
+* Crear un *issue* o *pull request* con el título `Entrega TP2` y asignarlo al
+  usuario `dessaya`.
+
 
 ## Nota
 
 La nota del TP se determina en base a la correctitud, prolijiidad y elegancia
 del código.
 
-La nota final de la materia es un promedio entre la nota del TP y la nota del
+La nota final de la materia es un promedio entre la nota de los TPs y la nota del
 examen final.

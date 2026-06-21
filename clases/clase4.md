@@ -9,7 +9,6 @@ nav_order: 5
 
 * Introducción a networking
 * Comunicación entre procesos: Sockets (parte I)
-* Presentación del Trabajo práctico. Entrega antes de clase 6.
 
 {: .nota-title }
 > Material
@@ -84,4 +83,3 @@ Respuesta en caso de error: `>ERR:%s\n` (ej: `>ERR:Division por cero\n`),
 donde:
 1. Comienza con `>`
 2. `%s` se reemplaza por el mensaje de error
-
