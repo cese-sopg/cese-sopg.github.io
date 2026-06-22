@@ -8,6 +8,7 @@ nav_order: 4
 
 * Comunicación entre procesos: Signals
 * Comunicación entre procesos: Pipes
+* Comunicación entre procesos: Named FIFOS
 
 {: .nota-title }
 > Material

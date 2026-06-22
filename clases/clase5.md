@@ -7,7 +7,6 @@ nav_order: 6
 # Clase 5
 
 * Comunicación entre procesos: Sockets (parte II)
-* Comunicación entre procesos: Named FIFOS
 * Multiplexed I/O
 * Presentación TP2
 
