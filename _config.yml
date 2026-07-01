@@ -9,9 +9,6 @@ liquid:
   error_mode: strict
 strict_front_matter: true
 
-aux_links:
-  Editar en Github: https://github.com/cese-sopg/cese-sopg.github.io
-
 search: true
 enable_copy_code_button: true
 
