@@ -2,7 +2,7 @@
 title: Trabajo práctico 2
 layout: default
 nav_order: 10
-nav_exclude: true
+nav_exclude: false
 ---
 
 # Trabajo práctico 2
@@ -17,8 +17,8 @@ El servidor debe:
 
 1. Esperar a que un cliente se conecte mediante el protocolo TCP, puerto 5000.
 
-2. Esperar a que el cliente envíe un _comando_ a ejecutar. El comando se
-   especifica como una secuencia de caracteres ASCII hasta el `\n`.
+2. Esperar a que el cliente envíe un comando a ejecutar (una secuencia de
+   caracteres ASCII hasta el `\n`).
 
 3. Realizar la operación correspondiente, enviando la respuesta al cliente.
 
@@ -63,22 +63,45 @@ siguientes casos:
 ## Cliente
 
 Dado que el protocolo de comunicación es ASCII, no es necesario programar un
-cliente sino que se pueden utilizar herramientas como `nc` (netcat) o `telnet`.
+cliente; en cambio puede utilizar herramientas como `nc` (netcat) o `telnet`.
 
-En ubuntu se pueden instalar con: `apt install netcat` o `apt install telnet`.
+En Ubuntu se pueden instalar con: `apt install netcat` o `apt install telnet`.
 
 ## Ejemplo
 
-* En la consola #1 (server):
+En la consola #1 (server):
 
 ```
 $ ./server
 PID: 12345
 ```
 
-* En la consola #2 (client): `nc localhost 5000`. Si la conexión es exitosa, el proceso
-  se queda esperando a recibir entrada de `stdin`.
+En la consola #2 (client):
 
+```
+$ nc localhost 5000
+```
+
+Si la conexión es exitosa, en la consola #1 se imprime `cliente conectado:
+127.0.0.1`, y el cliente en la consola #2 se queda esperando a recibir entrada
+de `stdin`. Mientras no se cierre la conexión, el servidor sigue atendiendo
+comandos sobre la misma sesión. La conexión se cierra desde el cliente (por
+ejemplo, con `Ctrl+C` o `Ctrl+D` en `nc`).
+
+Una sesión completa con dos conexiones de clientes:
+
+Consola #1 (server):
+
+```
+$ ./server
+PID: 12345
+cliente conectado: 127.0.0.1
+cliente desconectado: 127.0.0.1
+cliente conectado: 127.0.0.1
+cliente desconectado: 127.0.0.1
+```
+
+Consola #2 (cliente)
 ```
 $ nc localhost 5000
 SET manzana apple
@@ -87,6 +110,12 @@ SET perro dog
 OK
 SET hola hello
 OK
+```
+
+Consola #3 (cliente)
+
+```
+$ nc localhost 5000
 GET perro
 OK
 dog
@@ -98,10 +127,6 @@ GET perro
 NOTFOUND
 $
 ```
-
-* Mientras no se cierre la conexión, el servidor sigue atendiendo comandos sobre
-  la misma sesión. La conexión se cierra desde el cliente (por ejemplo, con
-  `Ctrl+C` o `Ctrl+D` en `nc`).
 
 ----
 
